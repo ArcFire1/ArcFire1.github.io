@@ -224,6 +224,7 @@
                     <h2 class="section-title">Recent project</h2>
                     <div class="row">
                         <template v-for="project in projects">
+                            <!-- Project Card -->
                             <div class="col-md-6">
                                 <div class="project-card">
                                     <a :href="project.link" class="project-card__modal open-modal popup-content">
@@ -237,6 +238,19 @@
                                     </a>
                                 </div>
                             </div>
+                            <!-- ./Project Card -->
+
+                            <!-- Modal of Project Card -->
+                            <div :id="project.modalLink" class="white-popup mfp-hide">
+                                <div class="modal-wrapper">
+                                    <img :src="project.modalImage" :alt="project.name">
+                                    <div class="modal-links">
+                                        <a :href="project.demoLink" v-if="project.demoLink" target="_blank" class="modal-link demo-link">Demo</a>
+                                        <a :href="project.githubLink" v-if="project.githubLink" target="_blank" class="modal-link github-button">view it on github</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- ./Modal of Project Card -->
                         </template>
                     </div>
                 </section>
@@ -263,44 +277,6 @@
                     </div>
                 </section>
                 <!-- /.contact-section -->
-                <!-- Modals -->
-                <div id="project-modal-1" class="white-popup mfp-hide">
-                    <div class="modal-wrapper">
-                        <img src="img/beambox-full.png" alt="BeamBox">
-                        <div class="modal-links">
-                            <!-- <a href="#" target="_blank" class="modal-link demo-link">Demo</a>-->
-                            <a href="https://github.com/ArcFire1/beambox" target="_blank" class="modal-link github-button">view it on github</a>
-                        </div>
-                    </div>
-                </div>
-                <div id="project-modal-2" class="white-popup mfp-hide">
-                    <div class="modal-wrapper">
-                        <img src="img/limelight-full.png" alt="LimeLight">
-                        <div class="modal-links">
-                            <a href="http://l33654q5.beget.tech/" target="_blank" class="modal-link demo-link">Demo</a>
-                            <a href="https://github.com/ArcFire1/limelight" target="_blank" class="modal-link github-button">view it on github</a>
-                        </div>
-                    </div>
-                </div>
-                <div id="project-modal-3" class="white-popup mfp-hide">
-                    <div class="modal-wrapper">
-                        <img src="img/ten-x-full.jpg" alt="Ten-X">
-                        <div class="modal-links">
-                            <a href="http://j25774hd.beget.tech/" target="_blank" class="modal-link demo-link">Demo</a>
-                            <!--<a href="" target="_blank" class="modal-link github-button">view it on github</a>-->
-                        </div>
-                    </div>
-                </div>
-                <div id="project-modal-4" class="white-popup mfp-hide">
-                    <div class="modal-wrapper">
-                        <img src="img/seo.maza-full.png" alt="Seo.maza">
-                        <div class="modal-links">
-                            <!--<a href="#" target="_blank" class="modal-link demo-link">Demo</a>-->
-                            <!--<a href="#" target="_blank" class="modal-link github-button">view it on github</a>-->
-                        </div>
-                    </div>
-                </div>
-                <!-- /.Modals -->
             </div>
         </div>
     </div>
