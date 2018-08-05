@@ -55,12 +55,5 @@ var portfolio = new Vue({
                                 githubLink: false
                         }
                 ]
-        },
-        methods: {
-                isLinkAvailable: function(){
-                        if (this.demoLink == "#") {
-
-                        }
-                }
         }
 });
