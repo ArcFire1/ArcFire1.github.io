@@ -223,58 +223,21 @@
                 <section class="projects-section" id="portfolio-section">
                     <h2 class="section-title">Recent project</h2>
                     <div class="row">
-                        <div class="col-md-6">
-                            <div class="project-card">
-                                <a href="#project-modal-1" class="project-card__modal open-modal popup-content">
-                                    <div class="project-card__image">
-                                        <img src="img/beambox.jpg" alt="beambox">
-                                    </div>
-                                    <div class="project-card__content">
-                                        <h2 class="project-card__title">BeamBox</h2>
-                                        <p>Beambox is a website template with well balanced colors and a nice design.</p>
-                                    </div>
-                                </a>
+                        <template v-for="project in projects">
+                            <div class="col-md-6">
+                                <div class="project-card">
+                                    <a :href="project.link" class="project-card__modal open-modal popup-content">
+                                        <div class="project-card__image">
+                                            <img :src="project.image" :alt="project.name">
+                                        </div>
+                                        <div class="project-card__content">
+                                            <h2 class="project-card__title">{{ project.name }}</h2>
+                                            <p>{{ project.description }}</p>
+                                        </div>
+                                    </a>
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="project-card">
-                                <a href="#project-modal-2" class="project-card__modal popup-content">
-                                    <div class="project-card__image">
-                                        <img src="img/limelight.png" alt="LimeLight">
-                                    </div>
-                                    <div class="project-card__content">
-                                        <h2 class="project-card__title">LimeLight</h2>
-                                        <p>This multipurpose website covers many possibilities, from blogging to showcasing portfolios.</p>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="project-card">
-                                <a href="#project-modal-3" class="project-card__modal popup-content">
-                                    <div class="project-card__image">
-                                        <img src="img/ten-x.jpg" alt="Ten-x">
-                                    </div>
-                                    <div class="project-card__content">
-                                        <h2 class="project-card__title">Ten-X</h2>
-                                        <p>Dark landing page.</p>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="project-card">
-                                <a href="#project-modal-4" class="project-card__modal popup-content">
-                                    <div class="project-card__image">
-                                        <img src="img/seo.maza.png" alt="Seo.Maza">
-                                    </div>
-                                    <div class="project-card__content">
-                                        <h2 class="project-card__title">Seo.maza</h2>
-                                        <p>Another landing page.</p>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
+                        </template>
                     </div>
                 </section>
                 <!-- /.projects-section -->
@@ -304,7 +267,7 @@
                 <div id="project-modal-1" class="white-popup mfp-hide">
                     <div class="modal-wrapper">
                         <img src="img/beambox-full.png" alt="BeamBox">
-                        <div class="links">
+                        <div class="modal-links">
                             <!-- <a href="#" target="_blank" class="modal-link demo-link">Demo</a>-->
                             <a href="https://github.com/ArcFire1/beambox" target="_blank" class="modal-link github-button">view it on github</a>
                         </div>
@@ -313,7 +276,7 @@
                 <div id="project-modal-2" class="white-popup mfp-hide">
                     <div class="modal-wrapper">
                         <img src="img/limelight-full.png" alt="LimeLight">
-                        <div class="links">
+                        <div class="modal-links">
                             <a href="http://l33654q5.beget.tech/" target="_blank" class="modal-link demo-link">Demo</a>
                             <a href="https://github.com/ArcFire1/limelight" target="_blank" class="modal-link github-button">view it on github</a>
                         </div>
@@ -322,7 +285,7 @@
                 <div id="project-modal-3" class="white-popup mfp-hide">
                     <div class="modal-wrapper">
                         <img src="img/ten-x-full.jpg" alt="Ten-X">
-                        <div class="links">
+                        <div class="modal-links">
                             <a href="http://j25774hd.beget.tech/" target="_blank" class="modal-link demo-link">Demo</a>
                             <!--<a href="" target="_blank" class="modal-link github-button">view it on github</a>-->
                         </div>
@@ -331,7 +294,7 @@
                 <div id="project-modal-4" class="white-popup mfp-hide">
                     <div class="modal-wrapper">
                         <img src="img/seo.maza-full.png" alt="Seo.maza">
-                        <div class="links">
+                        <div class="modal-links">
                             <!--<a href="#" target="_blank" class="modal-link demo-link">Demo</a>-->
                             <!--<a href="#" target="_blank" class="modal-link github-button">view it on github</a>-->
                         </div>
@@ -345,6 +308,7 @@
     <!-- Custom JS -->
     <script src="libs/jQuery/jquery-3.3.1.min.js"></script>
     <script src="libs/Magnific/Magnific-popup.min.js"></script>
+    <script src="libs/vue/vue.min.js"></script>
     <script src="js/common.js"></script>
 </body>
 </html>
